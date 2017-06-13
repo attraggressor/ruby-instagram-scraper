@@ -19,7 +19,7 @@ module RubyInstagramScraper
     params = ""
     params = "?max_id=#{ max_id }" if max_id
 
-    JSON.parse( open( "#{url}#{params}" ).read )
+    JSON.parse( open( "#{url}#{params}" ).read )["items"]
   end
 
   def self.get_user ( username, max_id = nil )
